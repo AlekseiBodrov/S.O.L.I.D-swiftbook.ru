@@ -1,6 +1,6 @@
 import Foundation
 
-class DataStore {
+final class DataStore {
 
     func savenameInCache(name: String) {
         print("Your name: \(name) is saved")

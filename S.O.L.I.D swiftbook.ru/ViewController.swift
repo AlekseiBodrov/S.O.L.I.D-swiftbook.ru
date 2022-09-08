@@ -63,6 +63,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        networkService.dataFetcher(urlString: urlString)
+    
         [textLableSave,
          myTectField,
          textLable,

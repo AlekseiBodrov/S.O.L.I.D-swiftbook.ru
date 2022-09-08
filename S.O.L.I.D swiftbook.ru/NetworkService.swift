@@ -1,7 +1,7 @@
 import Foundation
 
-class NetworkService {
-    
+final class NetworkService {
+
     func dataFetcher(urlString: String) {
         request(urlString: urlString) { (data, error) in
             let decoder = JSONDecoder()
@@ -10,7 +10,7 @@ class NetworkService {
             print(response)
         }
     }
-    
+
     func request(urlString: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)
