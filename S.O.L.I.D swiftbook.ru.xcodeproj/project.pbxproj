@@ -13,6 +13,7 @@
 		20E26C6A28CA29200098401B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E26C6928CA29200098401B /* Assets.xcassets */; };
 		20E26C6D28CA29200098401B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E26C6B28CA29200098401B /* LaunchScreen.storyboard */; };
 		20E26C7528CA34CC0098401B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7428CA34CC0098401B /* DataStore.swift */; };
+		20E26C7728CA39270098401B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7628CA39270098401B /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		20E26C6C28CA29200098401B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20E26C6E28CA29200098401B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20E26C7428CA34CC0098401B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		20E26C7628CA39270098401B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				20E26C6028CA291D0098401B /* AppDelegate.swift */,
 				20E26C6228CA291D0098401B /* SceneDelegate.swift */,
 				20E26C6428CA291D0098401B /* ViewController.swift */,
+				20E26C7628CA39270098401B /* NetworkService.swift */,
 				20E26C7428CA34CC0098401B /* DataStore.swift */,
 				20E26C6928CA29200098401B /* Assets.xcassets */,
 				20E26C6B28CA29200098401B /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E26C7728CA39270098401B /* NetworkService.swift in Sources */,
 				20E26C6528CA291D0098401B /* ViewController.swift in Sources */,
 				20E26C7528CA34CC0098401B /* DataStore.swift in Sources */,
 				20E26C6128CA291D0098401B /* AppDelegate.swift in Sources */,

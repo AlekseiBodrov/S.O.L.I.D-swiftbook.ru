@@ -1,8 +1,18 @@
 
 import UIKit
 
+struct Country: Decodable {
+    var Id: String
+    var Time: String
+    var Name: String
+    var Image: String?
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    let urlString = "https://raw.githubusercontent.com/Softex-Group/task-mobile/master/test.json"
+
+    var networkService = NetworkService()
     let dataStore = DataStore()
 
     let screenSize = UIScreen.main.bounds
@@ -20,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     lazy var myTectField: UITextField = {
         let textField = UITextField()
-        textField.frame = CGRect(x: screenSize.width / 2 - 100, y: 100, width: 200, height: 50)
+        textField.frame = CGRect(x: screenSize.width / 2 - 100, y: 150, width: 200, height: 50)
         textField.backgroundColor = .white.withAlphaComponent(0.1)
         textField.font = .systemFont(ofSize: 36, weight: .thin)
         textField.tintColor = .blue
@@ -32,7 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }()
     lazy var textLableSave: UILabel = {
         let lable = UILabel()
-        lable.frame = CGRect(x: screenSize.width / 2 - 100, y: 150, width: 200, height: 50)
+        lable.frame = CGRect(x: screenSize.width / 2 - 100, y: 220, width: 200, height: 50)
         lable.font = .systemFont(ofSize: 36, weight: .thin)
         lable.textColor = .white
         lable.textAlignment = .left
@@ -41,21 +51,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }()
     lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: screenSize.width / 2 - 100, y: 250, width: 200, height: 50)
+        button.frame = CGRect(x: screenSize.width / 2 - 100, y: 300, width: 200, height: 50)
         button.setTitle("Save", for: .normal)
         button.setTitleColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) , for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 19, weight: .bold)
         button.backgroundColor = .green
         button.addTarget(self, action: #selector(saveButtonTapped) , for: .touchUpInside)
-//        button.addTarget(self, action: #selector(touchUp), for: .touchUpOutside)
-
-        button.layer.shadowColor = UIColor.red.withAlphaComponent(0.9).cgColor
-        button.layer.shadowOpacity = 1
-        button.layer.shadowOffset = .zero
-        button.layer.shadowRadius = screenSize.height / 15 / 2
-        button.layer.cornerRadius = screenSize.height / 15 / 3
-        button.layer.masksToBounds = true
-
         return button
     }()
 
@@ -73,7 +74,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Business logic
 
     func changeName() {
-        guard let name = textLabel.text, name != "" else {
+        guard let name = textLableSave.text, name != "" else {
             showAlert()
             return
         }
@@ -88,10 +89,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Okey", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        textLableSave.text = textField.text
+        if let text = textField.text {
+            if let textRange = Range(range, in: text) {
+                let updatedText = text.replacingCharacters(in: textRange, with: string)
+                textLableSave.text = updatedText
+            }
+        }
         return true
     }
     
