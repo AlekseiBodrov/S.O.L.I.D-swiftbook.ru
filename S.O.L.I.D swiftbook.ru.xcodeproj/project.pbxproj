@@ -14,6 +14,10 @@
 		20E26C6D28CA29200098401B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E26C6B28CA29200098401B /* LaunchScreen.storyboard */; };
 		20E26C7528CA34CC0098401B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7428CA34CC0098401B /* DataStore.swift */; };
 		20E26C7728CA39270098401B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7628CA39270098401B /* NetworkService.swift */; };
+		20E26C7928CB1FA30098401B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7828CB1FA30098401B /* CountryModel.swift */; };
+		20E26C7B28CB203F0098401B /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7A28CB203F0098401B /* NetworkDataFetcher.swift */; };
+		20E26C7F28CB371F0098401B /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C7E28CB371F0098401B /* AppGroup.swift */; };
+		20E26C8128CB379C0098401B /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E26C8028CB379C0098401B /* DataFetcherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		20E26C6E28CA29200098401B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20E26C7428CA34CC0098401B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		20E26C7628CA39270098401B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20E26C7828CB1FA30098401B /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		20E26C7A28CB203F0098401B /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		20E26C7E28CB371F0098401B /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		20E26C8028CB379C0098401B /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +67,35 @@
 			isa = PBXGroup;
 			children = (
 				20E26C6028CA291D0098401B /* AppDelegate.swift */,
-				20E26C6228CA291D0098401B /* SceneDelegate.swift */,
 				20E26C6428CA291D0098401B /* ViewController.swift */,
-				20E26C7628CA39270098401B /* NetworkService.swift */,
-				20E26C7428CA34CC0098401B /* DataStore.swift */,
+				20E26C6228CA291D0098401B /* SceneDelegate.swift */,
+				20E26C7C28CB23D00098401B /* Service */,
 				20E26C6928CA29200098401B /* Assets.xcassets */,
 				20E26C6B28CA29200098401B /* LaunchScreen.storyboard */,
 				20E26C6E28CA29200098401B /* Info.plist */,
 			);
 			path = "S.O.L.I.D swiftbook.ru";
+			sourceTree = "<group>";
+		};
+		20E26C7C28CB23D00098401B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				20E26C7D28CB23E20098401B /* Model */,
+				20E26C7628CA39270098401B /* NetworkService.swift */,
+				20E26C7A28CB203F0098401B /* NetworkDataFetcher.swift */,
+				20E26C8028CB379C0098401B /* DataFetcherService.swift */,
+				20E26C7428CA34CC0098401B /* DataStore.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		20E26C7D28CB23E20098401B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20E26C7828CB1FA30098401B /* CountryModel.swift */,
+				20E26C7E28CB371F0098401B /* AppGroup.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,11 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E26C7B28CB203F0098401B /* NetworkDataFetcher.swift in Sources */,
 				20E26C7728CA39270098401B /* NetworkService.swift in Sources */,
 				20E26C6528CA291D0098401B /* ViewController.swift in Sources */,
+				20E26C7928CB1FA30098401B /* CountryModel.swift in Sources */,
 				20E26C7528CA34CC0098401B /* DataStore.swift in Sources */,
+				20E26C8128CB379C0098401B /* DataFetcherService.swift in Sources */,
 				20E26C6128CA291D0098401B /* AppDelegate.swift in Sources */,
 				20E26C6328CA291D0098401B /* SceneDelegate.swift in Sources */,
+				20E26C7F28CB371F0098401B /* AppGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

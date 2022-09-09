@@ -1,18 +1,11 @@
 
 import UIKit
 
-struct Country: Decodable {
-    var Id: String
-    var Time: String
-    var Name: String
-    var Image: String?
-}
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    let urlString = "https://raw.githubusercontent.com/Softex-Group/task-mobile/master/test.json"
-
-    var networkService = NetworkService()
+    var dataFetcherService = DataFetcherService()
     let dataStore = DataStore()
 
     let screenSize = UIScreen.main.bounds
@@ -60,10 +53,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
 
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        networkService.dataFetcher(urlString: urlString)
+        dataFetcherService.fetchCountry { (countries) in
+            print(countries?.first?.Name)
+        }
+        
+        dataFetcherService.fetchFreeGames { (freeGames) in
+            print(freeGames?.feed.results.first?.name)
+        }
+        
+        dataFetcherService.fetchNewGames { (newGames) in
+            print(newGames?.feed.results.first?.name)
+        }
     
         [textLableSave,
          myTectField,
